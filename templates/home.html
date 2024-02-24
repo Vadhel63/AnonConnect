@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+
+<div align="center">
+    <h2>AnonConnect</h2>
+</div>
+<div class="container">
+    <form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        <label>Room Name</label>
+        <input type="text" name="room_name" id="room_name" width="100px" />
+        
+        <input type="submit" value="Enter Room">
+    </form>
+</div>
+<div class="container">
+  <h1> Available  Rooms to Chat (Click to join): </h1>
+  {% if rooms %}
+    <ul>
+      {% for room in rooms %}
+        <li><a href="{{room.name}}/" class="room"> {{ room.name }}</a></li>
+      {%endfor%}
+    </ul>
+  {%endif%}
+</div> 
+</body>
+</html>
