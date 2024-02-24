@@ -22,7 +22,9 @@ body {
   background-color: #ddd;
   overflow-x: auto;
 }
-
+.darker b{
+  color:#005eff;
+}
 .container::after {
   content: "";
   clear: both;
@@ -66,7 +68,7 @@ select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #005eff;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -76,7 +78,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #0d55d0;
 }
 
 div {

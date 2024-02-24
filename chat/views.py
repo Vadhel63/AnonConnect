@@ -9,7 +9,7 @@ def home(request):
     return render(request, 'home.html',{'rooms': rooms})
 
 def room(request, room):
-    characters = string.ascii_letters + string.digits
+    characters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0','-','_']
     username = ''.join(secrets.choice(characters) for i in range(8))
     room_details = Room.objects.get(name=room)
     return render(request, 'room.html', {
