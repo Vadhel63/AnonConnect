@@ -22,8 +22,10 @@ def room(request, room):
 def checkview(request):
     room = request.POST['room_name']
     abc=request.POST['prefer']
-    if Room.objects.filter(name=room).exists():
+    if Room.objects.filter(name=room ,type=abc).exists():
         return redirect('/'+room+'/')
+    elif Room.objects.filter(name=room):
+        return render(request,'error.html')
     else:
         new_room = Room.objects.create(name=room,type=abc)
         new_room.save()

@@ -4,7 +4,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Room(models.Model):
-    name = models.CharField(max_length=1000)
+    name = models.CharField(max_length=1000,unique=True)
     type=models.CharField(max_length=20)
     
     
