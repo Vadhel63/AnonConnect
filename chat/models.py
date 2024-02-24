@@ -13,7 +13,3 @@ class Message(models.Model):
     date = models.DateTimeField(default=timezone.now, blank=True)
     user = models.CharField(max_length=1000000)
     room = models.CharField(max_length=1000000)
-class Sticker(models.Model):
-    image = models.ImageField(upload_to='stickers/')
-    created_by = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
