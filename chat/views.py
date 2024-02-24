@@ -4,6 +4,7 @@ from django.http import HttpResponse, JsonResponse
 import secrets
 import string
 
+
 def home(request):
     rooms = Room.objects.all()
     return render(request, 'home.html',{'rooms': rooms})
@@ -20,11 +21,11 @@ def room(request, room):
 
 def checkview(request):
     room = request.POST['room_name']
-
+    abc=request.POST['prefer']
     if Room.objects.filter(name=room).exists():
         return redirect('/'+room+'/')
     else:
-        new_room = Room.objects.create(name=room)
+        new_room = Room.objects.create(name=room,type=abc)
         new_room.save()
         return redirect('/'+room+'/')
 
@@ -42,3 +43,5 @@ def getMessages(request, room):
 
     messages = Message.objects.filter(room=room_details.id)
     return JsonResponse({"messages":list(messages.values())})
+
+

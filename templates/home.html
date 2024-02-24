@@ -14,8 +14,9 @@
     <form id="post-form" method="POST" action="checkview">
         {% csrf_token %}
         <label>Create Room</label>
-        <input type="text" name="room_name" id="room_name" width="100px" />
-        
+        <input type="text" name="room_name" id="room_name" width="100px" required/>
+        <label>Room_type</label>
+        <input type="text" name="prefer" width="100px" required/>
         <input type="submit" value="Enter Room">
     </form>
 </div>
@@ -24,7 +25,9 @@
   {% if rooms %}
     <ul>
       {% for room in rooms %}
-        <li><a href="{{room.name}}/" class="room"> {{ room.name }}</a></li>
+        {% if room.type == 'public' %}
+          <li><a href="{{room.name}}/" class="room"> {{ room.name }}</a></li>
+        {%endif%}
       {%endfor%}
     </ul>
   {%endif%}
