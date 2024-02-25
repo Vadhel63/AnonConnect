@@ -82,7 +82,9 @@ a{
     color: #005eff;
     text-decoration: none;
 }
-
+a:hover{
+    font-weight: bold;
+}
 .room-title {
     text-align: center;
     font-size: 24px;

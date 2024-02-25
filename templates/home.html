@@ -4,11 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+<title>AnonConnect</title>
 </head>
 <body>
 
 <div align="center">
     <h2>AnonConnect</h2>
+    <a href='{% url 'about' %}'>About</a>
 </div>
 <div class="container">
     <form id="post-form" method="POST" action="checkview">
