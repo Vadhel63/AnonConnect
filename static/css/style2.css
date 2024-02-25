@@ -82,3 +82,16 @@ a{
     color: #005eff;
     text-decoration: none;
 }
+
+.room-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #e6e6e6; /* Light gray for room title */
+  }
+  
+  .username {
+    color: #66b3ff; /* Light blue for username */
+    font-size: 18px;
+  }
+  

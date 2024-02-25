@@ -1,36 +1,59 @@
+{%load static%}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnonChat</title>
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
 </head>
 <body>
 
-<div align="center">
-    <h2>AnonConnect</h2>
+<div class="container">
+  <h1>Welcome to AnonChat</h1>
+  <p>An anonymous chat platform to connect with others.</p>
 </div>
 <div class="container">
-    <form id="post-form" method="POST" action="checkview">
-        {% csrf_token %}
-        <label>Create Room</label>
-        <input type="text" name="room_name" id="room_name" width="100px" required/>
-        <label>Room_type</label>
-        <input type="text" name="prefer" width="100px" required/>
-        <input type="submit" value="Enter Room">
-    </form>
+  <li><a href="http://127.0.0.1:8000/about/anon/">about</a></li>
 </div>
+
 <div class="container">
-  <h1> Available  Rooms to Chat (Click to join): </h1>
-  {% if rooms %}
-    <ul>
+  <form id="post-form" method="POST" action="checkview">
+    {% csrf_token %}
+    <label for="room_name">Create Room:</label>
+    <input type="text" name="room_name" id="room_name" placeholder="Enter room name" required/>
+    <label for="prefer">Room Type:</label>
+    <select name="prefer" id="prefer">
+      <option value="public">Public</option>
+      <option value="private">Private</option>
+    </select>
+    <input type="submit" value="Create Room">
+  </form>
+</div>
+
+<div class="container">
+  <form id="post-form" method="POST" action="jointeam">
+    {% csrf_token %}
+    <label for="join">Join a Room:</label>
+    <input type="text" name="join" id="join" placeholder="Enter room name to join"/>
+    <input type="submit" value="Join Room">
+  </form>
+</div>
+
+<div class="container-rooms">
+  <h2>Available Rooms to Chat (Click to join):</h2>
+  <ul class="room-list">
+    {% if rooms %}
       {% for room in rooms %}
         {% if room.type == 'public' %}
-          <li><a href="{{room.name}}/" class="room"> {{ room.name }}</a></li>
-        {%endif%}
-      {%endfor%}
-    </ul>
-  {%endif%}
-</div> 
+          <li><a href="{{ room.name }}/" class="room-link">{{ room.name }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </ul>
+</div>
+
+
 </body>
 </html>

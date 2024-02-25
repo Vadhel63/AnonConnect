@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chat',
     'bootstrap5',
+    'about'
     
 ]
 

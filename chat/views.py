@@ -18,10 +18,16 @@ def room(request, room):
         'room': room,
         'room_details': room_details
     })
-
+def jointeam(request):
+    code=request.POST['join']
+    if Room.objects.filter(name=code).exists():
+      return redirect('/'+code+'/')
+    else:
+        return HttpResponse("NO TEAM AVAILABLE")
 def checkview(request):
     room = request.POST['room_name']
     abc=request.POST['prefer']
+    
     if Room.objects.filter(name=room ,type=abc).exists():
         return redirect('/'+room+'/')
     elif Room.objects.filter(name=room):
@@ -47,3 +53,5 @@ def getMessages(request, room):
     return JsonResponse({"messages":list(messages.values())})
 
 
+
+   

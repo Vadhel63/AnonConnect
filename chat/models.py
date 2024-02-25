@@ -6,7 +6,7 @@ from django.utils import timezone
 class Room(models.Model):
     name = models.CharField(max_length=1000,unique=True)
     type=models.CharField(max_length=20)
-    
+    Join=models.CharField(max_length=1000)
     
 class Message(models.Model):
     value = models.CharField(max_length=1000000)
