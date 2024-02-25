@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #222; /* Dark background */
+  color: #eee; /* Light text */
   line-height: 1.6;
   margin: 0;
   padding: 20px;
@@ -17,27 +17,20 @@ body {
 .container {
   max-width: 800px;
   margin: 20px auto;
-  background-color: #fff;
+  background-color: #333; /* Darker container background */
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-.container1 {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #e0b0b0;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Darker box shadow */
   padding: 20px;
 }
 
 h1, h2 {
-  color: #005eff;
+  color: #00aaff; /* Light blue headings */
   margin-bottom: 20px;
 }
 
 p {
   margin-bottom: 15px;
+  color: #ccc; /* Light gray text */
 }
 
 form {
@@ -48,7 +41,7 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #333;
+  color: #ddd; /* Light gray labels */
 }
 
 input[type="text"],
@@ -56,9 +49,11 @@ select {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #666; /* Darker border */
   border-radius: 5px;
   box-sizing: border-box;
+  background-color: #444; /* Darker input background */
+  color: #eee; /* Light text */
 }
 
 input[type="submit"] {
@@ -66,13 +61,13 @@ input[type="submit"] {
   padding: 12px;
   border: none;
   border-radius: 5px;
-  background-color: #005eff;
-  color: #fff;
+  background-color: #00aaff; /* Light blue button */
+  color: #fff; /* White text */
   cursor: pointer;
 }
 
 input[type="submit"]:hover {
-  background-color: #0d55d0;
+  background-color: #0077cc; /* Darker blue on hover */
 }
 
 ul.room-list {
@@ -88,25 +83,29 @@ a.room-link {
   display: block;
   padding: 10px;
   border-radius: 5px;
-  background-color: #005eff;
-  color: #fff;
+  background-color: #00aaff; /* Light blue button */
+  color: #fff; /* White text */
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
 }
 
 a.room-link:hover {
-  background-color: #0d55d0;
+  background-color: #0077cc; /* Darker blue on hover */
 }
-a.back{
+
+a.back {
   text-decoration: none;
-  color: #005eff;
+  color: #00aaff; /* Light blue link */
 }
-a.back:hover{
+
+a.back:hover {
   font-style: oblique;
+  color: #0077cc; /* Darker blue on hover */
 }
+
 @media (max-width: 600px) {
   .container {
-    padding: 15px;
+      padding: 15px;
   }
 }

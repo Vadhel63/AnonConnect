@@ -5,75 +5,89 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #555;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #222; /* Dark background */
+    color: #eee; /* Light text */
   }
-}
-</style>
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4); /* Darker shadow */
+    margin: 8px;
+    background-color: #333; /* Dark card background */
+    color: #eee; /* Light text */
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #111; /* Darker background */
+    color: #eee; /* Light text */
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: #888; /* Light gray title */
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #333; /* Dark button background */
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555; /* Darker hover background */
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  a {
+    color: #005eff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    font-weight: bold;
+  }
+
+  </style>
 </head>
 <body>
 
@@ -83,7 +97,7 @@ html {
     <p>Welcome to AnonConnect - the anonymous chat platform where you can connect with others without revealing your identity.</p>
     <p>AnonConnect provides a secure and private environment for users to engage in discussions, share thoughts, and collaborate without the need for personal information.</p>
  
-    <li><a href='/' class="back">Back to Home</a></li>
+    <a href='/' class="back">Back to Home</a>
 
 </div>
 

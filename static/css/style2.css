@@ -1,20 +1,25 @@
 body {
     margin: 0 auto;
     max-width: 800px;
-    padding: 0 20px;
+    padding: 0 20px;  
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+    background-image: url('../1.jpg');
+    background-size: cover; /* This ensures the image covers the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
 }
 
 .container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
+    border: 2px solid #666; /* Darker border color */
+    background-color: #444; /* Darker background color */
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
 }
 
 .darker {
-    border-color: #ccc;
-    background-color: #ddd;
+    border-color: #888; /* Darker border color */
+    background-color: #666; /* Darker background color */
 }
 
 .container::after {
@@ -46,6 +51,7 @@ body {
     float: left;
     color: #999;
 }
+
 input[type=password],
 input[type=text],
 select {
@@ -53,9 +59,11 @@ select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #888; /* Darker border color */
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: #555; /* Darker input background color */
+    color: #fff; /* Light text color */
 }
 
 input[type=submit] {
@@ -75,25 +83,37 @@ input[type=submit]:hover {
 
 div {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #333; /* Dark background color */
     padding: 20px;
+    color: #fff; /* Light text color */
 }
-a{
+
+a {
     color: #005eff;
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     font-weight: bold;
 }
+
 .room-title {
     text-align: center;
     font-size: 24px;
     margin-bottom: 10px;
-    color: #e6e6e6; /* Light gray for room title */
-  }
-  
-  .username {
+    color: #ccc; /* Lighter gray for room title */
+}
+
+.username {
     color: #66b3ff; /* Light blue for username */
     font-size: 18px;
-  }
-  
+}
+
+/* Additional Colors */
+.container:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
+input[type=submit]:active {
+    background-color: #003da6; /* Darker background color when button is clicked */
+}
