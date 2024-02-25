@@ -24,7 +24,7 @@ def jointeam(request):
     if Room.objects.filter(password=code,name=room_name).exists():
       return redirect('/'+room_name+'/')
     else:
-        return HttpResponse("NO TEAM AVAILABLE")
+        return render(request,'passwordd.html')
         
     
 def checkview(request):
