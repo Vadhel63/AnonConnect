@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnonConnect | {{room}}</title>
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style1.css' %}">
 
@@ -9,8 +10,8 @@
 </head>
 <body>
 <div class="container">
-<h2>{{room}} - AnonConnect</h2> 
-<h2>Username - {{username}}</h2>
+<h2 class="room-title" align="center">Room - {{room}}</h2> 
+{% comment %} <h2>Username - {{username}}</h2> {% endcomment %}
 </div>  
 <div id="display"> </div>
 <script>
@@ -48,11 +49,11 @@
 
 <div class="container">
     <form id="post-form">
-        {% csrf_token %}
-        <input type="hidden" name="username" id="username" value="{{username}}"/>
-        <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
-        <input type="text" name="message" id="message" width="100px" />
-        <input type="submit" value="Send">
+      {% csrf_token %}
+      <input type="text" name="username" id="username" placeholder="Enter your username" />
+      <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
+      <input type="text" name="message" id="message" width="100px" />
+      <input type="submit" value="Send">
     </form>
     <a href='/' class="back">Back to Home</a>
 </div>
@@ -63,12 +64,12 @@
 <script type="text/javascript">
   $(document).on('submit','#post-form',function(e){
     e.preventDefault();
-
+    var username = $('#username').val();
     $.ajax({
       type:'POST',
       url:'/send',
       data:{
-          username:$('#username').val(),
+          username:username,
           room_id:$('#room_id').val(),
           message:$('#message').val(),
         csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
