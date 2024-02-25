@@ -46,7 +46,7 @@ body {
     float: left;
     color: #999;
 }
-
+input[type=password],
 input[type=text],
 select {
     width: 100%;
