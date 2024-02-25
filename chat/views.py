@@ -20,20 +20,25 @@ def room(request, room):
     })
 def jointeam(request):
     code=request.POST['join']
-    if Room.objects.filter(name=code).exists():
-      return redirect('/'+code+'/')
+    room_name=request.POST['room']
+    if Room.objects.filter(password=code,name=room_name).exists():
+      return redirect('/'+room_name+'/')
     else:
         return HttpResponse("NO TEAM AVAILABLE")
+        
+    
 def checkview(request):
     room = request.POST['room_name']
     abc=request.POST['prefer']
-    
-    if Room.objects.filter(name=room ,type=abc).exists():
+    key=request.POST['password']
+    if Room.objects.filter(name=room ,type=abc,password=key).exists():
         return redirect('/'+room+'/')
+    elif Room.objects.filter(name=room,password=''):
+        return render(request,'error.html')    
     elif Room.objects.filter(name=room):
         return render(request,'error.html')
     else:
-        new_room = Room.objects.create(name=room,type=abc)
+        new_room = Room.objects.create(name=room,type=abc,password=key)
         new_room.save()
         return redirect('/'+room+'/')
 

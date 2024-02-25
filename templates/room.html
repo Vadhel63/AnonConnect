@@ -47,12 +47,13 @@
   </script>
   
 
-<div class="container">
+<div class="container1">
     <form id="post-form">
+      <label>type Messages</label>
       {% csrf_token %}
-      <input type="text" name="username" id="username" placeholder="Enter your username" />
+      <input type="text" name="username" id="username" placeholder="Enter your username" required>
       <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
-      <input type="text" name="message" id="message" width="100px" />
+      <input type="text" name="message" id="message" width="100px" placeholder="Write text" required />
       <input type="submit" value="Send">
     </form>
     <a href='/' class="back">Back to Home</a>

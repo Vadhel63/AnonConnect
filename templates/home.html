@@ -13,22 +13,24 @@
     <a href='{% url 'about' %}'>About</a>
 </div>
 <div class="container">
-    <form id="post-form" method="POST" action="checkview">
+  <form id="post-form" method="POST" action='checkview'>
         {% csrf_token %}
-        <label>Create Room</label>
-        <input type="text" name="room_name" id="room_name" width="100px" required/>
-        <label>Room_type</label>
-        <select name="prefer" id="prefer">
-          <option value="public">Public</option>
-          <option value="private">Private</option>
-        </select>
-        <input type="submit" value="Enter Room">
-
-        
-    </form>
+    <label for="room_name">Create Room</label>
+    <input type="text" name="room_name" id="room_name" width="100px" required/>
+    <label>Room Type</label>
+    <select name="prefer" id="prefer">
+        <option value="public">public</option>
+        <option value="private">private</option>
+    </select>
+    <label>Password:</label>
+    <input type="password" id="password" name="password" required width="=100px">
+    <input type="submit" value="Enter Room">
+  </form>
     <form id="post-form" method="POST" action="jointeam">
       {% csrf_token %}
-      <label>Join_TEAM</label>
+      <label>Room_name:</label>
+      <input type="text" name="room" id="room" width="100px"/>
+     <label>password:</label>
       <input type="text" name="join" id="join" width="100px"/>
       <input type="submit" value="Join Room">
     </form>
@@ -44,6 +46,8 @@
       {%endfor%}
     </ul>
   {%endif%}
+ 
 </div> 
+
 </body>
 </html>
