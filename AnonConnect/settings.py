@@ -26,7 +26,7 @@ SECRET_KEY = 'm%c30v(4=6q!_ouzf5xx9l7n89pl0#l16lo6+z*g4!49-63@t#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","192.168.72.19","localhost"]
+ALLOWED_HOSTS = ["127.0.0.1","192.168.72.19","192.168.1.6","localhost"]
 TIME_ZONE = 'Asia/Kolkata'
 
 
